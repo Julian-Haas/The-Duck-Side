@@ -13,8 +13,8 @@ public class MOVE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveRight = new Vector3(0, 0, 0);
-        moveLeft = new Vector3(0, 180, 0); 
+        moveRight = new Vector3(0, 90, 0);
+        moveLeft = new Vector3(0, 270, 0); 
     }
 
     // Update is called once per frame
@@ -24,12 +24,12 @@ public class MOVE : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.localRotation = Quaternion.Euler(moveRight);
-            transform.position += Vector3.right * speed; 
+            transform.position -= Vector3.forward * speed; 
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= Vector3.right * speed;
+            transform.position += Vector3.forward * speed;
             transform.localRotation = Quaternion.Euler(moveLeft);
         }
         //springen
